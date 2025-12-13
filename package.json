@@ -1,8 +1,8 @@
 {
   "name": "com.bnj.utility-toolkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "BNJ - Utility Toolkit",
-  "description": "This is the lovely description to this very useful package.",
+  "description": "Provides useful extensions and helper functions",
   "unity": "2020.3",
   "author": {
     "name": "SilentBenjiNinja",
