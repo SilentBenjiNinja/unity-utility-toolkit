@@ -1,4 +1,4 @@
-﻿using Time = UnityEngine.Time;
+﻿using UnityEngine;
 
 namespace bnj.utility_toolkit.Runtime
 {
@@ -12,5 +12,7 @@ namespace bnj.utility_toolkit.Runtime
             get => Time.timeScale;
             set => Time.timeScale = value;
         }
+
+        // TODO: time utility for pausing the game from multiple places?
     }
 }

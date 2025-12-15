@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace bnj.utility_toolkit.Runtime
+namespace bnj.utility_toolkit.Runtime.Debug
 {
     public static class DebugUtils
     {

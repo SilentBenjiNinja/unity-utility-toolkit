@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace bnj.utility_toolkit.Runtime
+namespace bnj.utility_toolkit.Runtime.Logging
 {
     // TODO:
     // make stacktrace better! -> compile and add as dll so this won't show in stacktrace!

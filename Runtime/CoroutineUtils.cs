@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace bnj.utility_toolkit.Runtime
+namespace bnj.utility_toolkit.Runtime.Coroutines
 {
     public static class CoroutineUtils
     {
