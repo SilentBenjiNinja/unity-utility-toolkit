@@ -2,6 +2,8 @@
 
 namespace bnj.utility_toolkit.Runtime
 {
+    // TODO: more stuff for vectors, matrix, quaternion, fixed point numbers?
+    // cost-effective sine, log, etc
     public static class MathUtils
     {
         public static float Log10(this float value) => Mathf.Log10(value);

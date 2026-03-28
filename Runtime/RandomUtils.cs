@@ -2,6 +2,7 @@
 
 namespace bnj.utility_toolkit.Runtime
 {
+    // TODO: float, vector3, OnCircle, InsideSphere
     public static class RandomUtils
     {
         const int RANDOM_SEED = 69420666;
@@ -18,11 +19,17 @@ namespace bnj.utility_toolkit.Runtime
 
         public static bool Chance(float chance) => chance > RandomFloat;
 
-        public static Vector2 RandomPointInsideCircle(Vector2 origin, float maxRadius) =>
-            origin + UnityEngine.Random.insideUnitCircle * maxRadius;
+        public static Vector2 RandomInsideCircle(Vector2 origin, float maxRadius) =>
+            origin + Random.insideUnitCircle * maxRadius;
 
-        public static Vector3 RandomPointOnSphere(Vector3 origin, float maxRadius) =>
-            origin + UnityEngine.Random.onUnitSphere * maxRadius;
+        public static Vector3 RandomOnCircle(Vector2 origin, float radius) =>
+            origin + Random.onUnitCircle * radius;
+
+        public static Vector3 RandomInsideSphere(Vector3 origin, float maxRadius) =>
+            origin + Random.insideUnitSphere * maxRadius;
+
+        public static Vector3 RandomOnSphere(Vector3 origin, float radius) =>
+            origin + Random.onUnitSphere * radius;
 
         public static float Perlin(float x, float frequency = 1) => Mathf.PerlinNoise1D(x * frequency);
 

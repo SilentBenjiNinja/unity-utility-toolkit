@@ -2,6 +2,7 @@
 
 namespace bnj.utility_toolkit.Runtime.Components
 {
+    // TODO: this might be completely irrelevant with auto fields?
     public static class ComponentUtils
     {
         public static GameObject GetChildGameObject(this Component parent, string path) =>
