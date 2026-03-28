@@ -3,6 +3,11 @@
 namespace bnj.utility_toolkit.Runtime
 {
     // TODO: float, vector3, OnCircle, InsideSphere
+    /// <summary>
+    /// Random value helpers backed by <see cref="System.Random"/>.
+    /// Covers integers, floats, probability checks, spatial distributions (circle, sphere),
+    /// Perlin noise sampling, and random colours.
+    /// </summary>
     public static class RandomUtils
     {
         const int RANDOM_SEED = 69420666;

@@ -6,6 +6,16 @@ namespace bnj.utility_toolkit.Runtime.Logging
     // TODO:
     // make stacktrace better! -> compile and add as dll so this won't show in stacktrace!
     // log to screen option?
+
+    /// <summary>
+    /// Structured logger wrapping <see cref="UnityEngine.Debug"/> with level-based output,
+    /// colour-coded messages in the Editor, and automatic caller context (member name, file, line number)
+    /// via compiler-injected attributes.
+    /// In the Editor each log entry is a clickable hyperlink that jumps to the call site.
+    /// </summary>
+    /// <remarks>
+    /// Log levels in ascending severity: <c>Debug</c> → <c>Info</c> → <c>Warn</c> → <c>Error</c> → <c>Fatal</c>.
+    /// </remarks>
     public static class LogUtils
     {
         static Action<string> LogFunction(LogLevel logLevel = LogLevel.Debug) => logLevel switch

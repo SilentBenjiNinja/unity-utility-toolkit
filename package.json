@@ -1,8 +1,8 @@
 {
   "name": "com.bnj.utility-toolkit",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "displayName": "BNJ - Utility Toolkit",
-  "description": "Provides useful extensions and helper functions",
+  "description": "Lightweight extension methods and static helpers for common Unity patterns. Covers coroutines (delay, repeat, conditional), math, random values, collections, enums, string formatting, structured logging, audio math, and more. No dependencies.",
   "unity": "2020.3",
   "author": {
     "name": "SilentBenjiNinja",

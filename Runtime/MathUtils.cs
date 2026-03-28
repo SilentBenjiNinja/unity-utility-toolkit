@@ -4,6 +4,11 @@ namespace bnj.utility_toolkit.Runtime
 {
     // TODO: more stuff for vectors, matrix, quaternion, fixed point numbers?
     // cost-effective sine, log, etc
+    /// <summary>
+    /// Lightweight math helpers and extension methods for <see langword="float"/>, <see langword="int"/>,
+    /// <see cref="Vector2"/>, <see cref="Vector3"/>, <see cref="Color"/>, and <see cref="Transform"/>.
+    /// Adds 2D rotation/look-vector utilities and avoids allocations for common operations.
+    /// </summary>
     public static class MathUtils
     {
         public static float Log10(this float value) => Mathf.Log10(value);

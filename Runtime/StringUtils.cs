@@ -1,5 +1,9 @@
 ﻿namespace bnj.utility_toolkit.Runtime
 {
+    /// <summary>
+    /// String formatting helpers for common game UI patterns:
+    /// percentages, fractions, large-number suffixes (K / M / B / T), countdown timers, and CamelCase splitting.
+    /// </summary>
     public static class StringUtils
     {
         static readonly string[] highNumberSuffixes = new[] { "", "K", "M", "B", "T" };
