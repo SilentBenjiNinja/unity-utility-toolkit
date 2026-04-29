@@ -34,13 +34,18 @@ AnimationSequence.Create(this)
 
 ### `MathUtils` — math extensions
 
-Extension methods on `float`, `int`, `Vector2`, `Vector3`, `Color`, and `Transform`. Covers clamp, abs, floor/ceil/round, lerp, log, sqrt, pow, and 2D look-rotation utilities.
+Extension methods on `float`, `int`, `Vector2`, `Vector3`, `Color`, and `Transform`. Covers clamp, abs, floor/ceil/round, lerp, log, sqrt, pow, 2D look-rotation utilities, and fast approximation methods for performance-sensitive code.
 
 ```csharp
 float t = rawValue.Clamp01();
 Color faded = color.WithAlpha(0.5f);
 Quaternion rot = MathUtils.Get2DLookAtRotation(transform.position, target.position);
 bool close = MathUtils.IsDistanceBetweenPointsCloserThan(a, b, 3f);
+
+// Fast approximations (~4x faster, small error — suitable for VFX, AI, procedural animation)
+float dist = rawDist.SqrtFast();
+float wave = angle.SinFast();
+float magnitude = value.Log10Fast();
 ```
 
 ### `RandomUtils` — random values
