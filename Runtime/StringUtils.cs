@@ -9,34 +9,21 @@
         static readonly string[] highNumberSuffixes = new[] { "", "K", "M", "B", "T" };
 
         public static string GetFractionString(float value1, float value2) =>
-            $"{GetDecimalString(value1.Ceil())} / {GetDecimalString(value2.Ceil())}";
+            $"{value1.Ceil()} / {value2.Ceil()}";
 
         public static string GetPercentageString(this float value) =>
             $"{(value * 100).Round()}%";
 
         // dont use for values > 2M, can break bc of overflow (made double, not tested!)
-        public static string GetDecimalString(this float value, int maxPrecision = 0)
-        {
-            // TODO: the applied precision is not working as intended, e.g. rounding to 2.10 where it should be 2.1!
-            int appliedPrecision = 0;
-            double roundedValue = ((double)value * 10.Pow(maxPrecision)).Round() / 10.Pow(maxPrecision);
-            for (int i = 0; i < maxPrecision; i++)
-            {
-                if (roundedValue % .1f.Pow(i) < .5f * .1f.Pow(i + 1))
-                    break;
-
-                appliedPrecision = i + 1;
-            }
-
-            //DebugUtils.Log(value + " -> " + roundedValue);
-            return roundedValue.ToString($"N{appliedPrecision}");
-        }
+        public static string GetDecimalString(this float value, int maxPrecision = 0) =>
+            maxPrecision == 0 ? value.Round().ToString() :
+            value.Round(maxPrecision).ToString($"0.{new string('#', maxPrecision)}");
 
         public static string GetHighDecimalString(this float value)
         {
             float displayedValue = value;
             int suffixId = 0;
-            while (displayedValue > 1000)
+            while (displayedValue > 999)
             {
                 suffixId += 1;
                 displayedValue /= 1000;
@@ -47,9 +34,7 @@
         public static string GetTimerString(this float value)
         {
             int fullSeconds = value.Ceil();
-            int minutes = fullSeconds / 60;
-            int seconds = fullSeconds % 60;
-            return $"{minutes}:{(seconds < 10 ? $"0{seconds}" : seconds)}";
+            return $"{fullSeconds / 60}:{fullSeconds % 60:D2}";
         }
 
         public static string GetCeiled(this float value) => value.Ceil().ToString();
